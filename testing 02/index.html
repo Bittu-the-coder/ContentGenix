@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ContentGenix - AI Content Generator</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/@google/generative-ai"></script>
+  </head>
+  <body>
+    <header>
+      <div class="container header-content">
+        <div class="logo">
+          <i class="fas fa-robot"></i>
+          <span>ContentGenix</span>
+        </div>
+        <button class="theme-toggle" id="themeToggle">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <section class="platform-selector">
+          <div class="platform-tabs">
+            <div class="platform-tab active" data-platform="instagram">
+              Instagram
+            </div>
+            <div class="platform-tab" data-platform="youtube">YouTube</div>
+            <div class="platform-tab" data-platform="linkedin">LinkedIn</div>
+            <div class="platform-tab" data-platform="twitter">Twitter</div>
+            <div class="platform-tab" data-platform="tiktok">TikTok</div>
+            <div class="platform-tab" data-platform="blog">Blog</div>
+          </div>
+        </section>
+
+        <section class="input-section">
+          <h2>Generate Amazing Content</h2>
+          <div class="input-grid">
+            <div class="input-group">
+              <label for="contentType">Content Type</label>
+              <select id="contentType">
+                <option value="post">Post</option>
+                <option value="caption">Caption</option>
+                <option value="hashtags">Hashtags</option>
+                <option value="title">Title</option>
+                <option value="script">Video Script</option>
+                <option value="joke">Joke</option>
+                <option value="quote">Quote</option>
+              </select>
+            </div>
+
+            <div class="input-group">
+              <label for="tone">Tone</label>
+              <select id="tone">
+                <option value="professional">Professional</option>
+                <option value="casual">Casual</option>
+                <option value="funny">Funny</option>
+                <option value="inspirational">Inspirational</option>
+                <option value="educational">Educational</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label for="topic">Topic/Theme</label>
+            <input
+              type="text"
+              id="topic"
+              placeholder="e.g., Sustainable fashion, Tech gadgets"
+            />
+          </div>
+
+          <div class="input-group">
+            <label for="prompt">Additional Details (Optional)</label>
+            <textarea
+              id="prompt"
+              placeholder="Specific requirements, keywords, or style preferences..."
+            ></textarea>
+          </div>
+
+          <button class="generate-btn" id="generateBtn">
+            <i class="fas fa-magic"></i> Generate Content
+          </button>
+        </section>
+
+        <section class="output-section" id="outputSection">
+          <div class="output-card">
+            <h3>Welcome to ContentGenix!</h3>
+            <p>
+              Select your platform, content type, and provide a topic. Our AI
+              will generate optimized content tailored to your needs.
+            </p>
+          </div>
+        </section>
+
+        <section class="history-section" id="historySection">
+          <h2>Your Content History</h2>
+          <div class="history-items" id="historyItems"></div>
+          <button class="toggle-history" id="toggleHistory">
+            <i class="fas fa-chevron-up"></i> Hide History
+          </button>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container footer-content">
+        <div class="logo">
+          <i class="fas fa-robot"></i>
+          <span>ContentGenix</span>
+        </div>
+        <p>AI-powered content generation for all your social media needs</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p class="copyright">&copy; 2023 ContentGenix. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
